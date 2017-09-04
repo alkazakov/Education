@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D920F509-8B15-4180-94E5-F992274709E3}</ProjectGuid>
+    <ProjectGuid>{0DDC1434-1AC5-4E7B-B7FA-77231E2EB7B2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Telephone</RootNamespace>
-    <AssemblyName>Telephone</AssemblyName>
+    <RootNamespace>Telephone2</RootNamespace>
+    <AssemblyName>Telephone2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes.cs" />
-    <Compile Include="Fabrics.cs" />
     <Compile Include="Interfaces.cs" />
+    <Compile Include="Phone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

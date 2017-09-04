@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Telephone
 {
+    interface IHardware
+    {
+        
+    }
      interface ITurnOn
     {
         void TurnOn();
@@ -16,39 +20,39 @@ namespace Telephone
         void TurnOff();
     }
 
-    interface ITurnOnOffable : ITurnOn, ITurnOff
+    interface ITurnOnOff : ITurnOn, ITurnOff
     {
         
     }
-     interface IKeyboard : ITurnOnOffable
+     interface IKeyboard : ITurnOnOff, IHardware
     {
         void Click();
     }
-    interface IWifiModule : ITurnOnOffable
+    interface IWifiModule : ITurnOnOff, IHardware
     {
         void Connect();
         string GetData(string url);
         void SendData(string data);
     }
-     interface ICamera : ITurnOnOffable
+     interface ICamera : ITurnOnOff, IHardware
     {
          void TakePhoto();
      }
-     interface IMemory : ITurnOnOffable
+     interface IMemory : ITurnOnOff, IHardware
     {
          int SaveData(string data);
          string GetData(int address);
      }
-     interface IHardDrive : ITurnOnOffable
+     interface IHardDrive : ITurnOnOff
     {
          int SaveData(string data);
          string GetData(int address);
      }
-    interface IDisplay : ITurnOnOffable
+    interface IDisplay : ITurnOnOff, IHardware
     {
         void Show(string data);
     }
-    interface IOperationSystem : ITurnOnOffable
+    interface IOperationSystem : ITurnOnOff, IHardware
     {
         void Load();
         void Login();

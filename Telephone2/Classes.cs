@@ -3,32 +3,6 @@ using System.Collections.Generic;
 
 namespace Telephone
 {
-    class Phone : ITurnOnOffable
-    {
-        private IDisplay _display;
-
-        private IKeyboard _keyboard;
-
-        private IOperationSystem _operationSystem;
-
-        private IHardDrive _hardDrive;
-
-        private IMemory _memory;
-
-        private ICamera _camera;
-
-        private IWifiModule _wifiModule;
-
-        public void TurnOn()
-        {
-            throw new NotImplementedException();
-        }
-        public void TurnOff()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
     public class Display : IDisplay
     {
         public void TurnOn()

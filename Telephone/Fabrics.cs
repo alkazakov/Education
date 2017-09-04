@@ -55,7 +55,7 @@ namespace Telephone
             return new Camera();
         }
     }
-    class WifiModulFactory : IPartFactory<IWifiModule>
+    class WifiModuleFactory : IPartFactory<IWifiModule>
     {
         public IWifiModule Create()
         {
