@@ -19,6 +19,12 @@ namespace Telephone
 
         private IWifiModule _wifiModule;
 
+        public Phone(DisplayFactory displayFactory)
+        {
+            _display = displayFactory.Create(nameof(Display));
+            _display.TurnOn();
+        }
+
         public void TurnOn()
         {
             throw new NotImplementedException();
@@ -33,7 +39,7 @@ namespace Telephone
     {
         public void TurnOn()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Turn On Display");
         }
         public void TurnOff()
         {

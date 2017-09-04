@@ -11,13 +11,40 @@ namespace Telephone
     interface IPartFactory<out TResult>
     {
         TResult Create();
+        void Initialize();
+
+        bool Isinitialized { get; }
     }
+
+
 
     class DisplayFactory: IPartFactory<IDisplay>
     {
+        IList<IDisplay> SupportedTypes = new List<IDisplay>();
+
+        public void Initialize()
+        {
+            SupportedTypes.Add(new Display());
+            Isinitialized = true;
+
+        }
+
+        public bool Isinitialized { get; }
+
+        public IDisplay Create(Type type)
+        {
+            if (!Isinitialized)
+            {
+                throw  new Exception("Not Initialized!");
+            }
+            if (SupportedTypes.Any(t=> type.Name == nameof(t) ))
+            return new Display();
+            throw  new Exception("InvalidTypeName");
+        }
+
         public IDisplay Create()
         {
-            return new Display();
+            throw new NotImplementedException();
         }
     }
     class KeyboardFactory : IPartFactory<IKeyboard>

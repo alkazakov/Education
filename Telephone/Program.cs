@@ -10,6 +10,9 @@ namespace Telephone
     {
         static void Main(string[] args)
         {
+            Phone phone = new Phone(new DisplayFactory());
+
+            Console.ReadKey();
         }
     }
 }
