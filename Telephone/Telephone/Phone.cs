@@ -5,12 +5,12 @@ namespace Telephone
     interface ITelephoneBuilder
     {
         IDisplay BuildDisplay();
-        void BuildKeyboard();
-        void BuildOperatingSystem();
-        void BuildHardDrive();
-        void BuildMemory();
-        void BuildCamera();
-        void BuildWifiModule();
+        IKeyboard BuildKeyboard();
+        IOperationSystem BuildOperatingSystem();
+        IHardDrive BuildHardDrive();
+        IMemory BuildMemory();
+        ICamera BuildCamera();
+        IWifiModule BuildWifiModule();
         Phone Phone {get;}
     }
 
@@ -22,38 +22,46 @@ namespace Telephone
             return displayFactory.Create<AmoledDisplay>();
         }
 
-        public void BuildKeyboard()
+        public IKeyboard BuildKeyboard()
         {
             throw new NotImplementedException();
         }
 
-        public void BuildOperatingSystem()
+        public IOperationSystem BuildOperatingSystem()
         {
             throw new NotImplementedException();
         }
 
-        public void BuildHardDrive()
+        public IHardDrive BuildHardDrive()
         {
             throw new NotImplementedException();
         }
 
-        public void BuildMemory()
+        public IMemory BuildMemory()
         {
             throw new NotImplementedException();
         }
 
-        public void BuildCamera()
+        public ICamera BuildCamera()
         {
-            throw new NotImplementedException();
+            CameraFactory cameraFactory = new CameraFactory();
+            return cameraFactory.Create<SamsungFrontCamera>();
         }
 
-        public void BuildWifiModule()
+        public IWifiModule BuildWifiModule()
         {
             throw new NotImplementedException();
         }
 
         public Phone Phone { get; }
+
+        public Phone Construct()
+        {
+           return  new Phone(BuildDisplay(),BuildCamera());
+        }
     }
+
+
 
     class Phone : ITurnOnOffable
     {
@@ -71,9 +79,10 @@ namespace Telephone
 
         private IWifiModule _wifiModule;
 
-        public Phone(DisplayFactory displayFactory)
+        public Phone(IDisplay display, ICamera camera)
         {
-            _display = displayFactory.Create<RetinaDisplay>();
+            _display = display;
+            _camera = camera;
         }
 
         public void TurnOn()

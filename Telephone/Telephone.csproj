@@ -43,10 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\Photo.cs" />
     <Compile Include="Interfaces\ITurnOn.cs" />
     <Compile Include="Interfaces\ITurnOff.cs" />
     <Compile Include="Interfaces\ITurnOnOffable.cs" />
+    <Compile Include="Parts\Camera\AppleFrontCamera.cs" />
+    <Compile Include="Parts\Camera\AppleRearCamera.cs" />
+    <Compile Include="Parts\Camera\SamsungFrontCamera.cs" />
+    <Compile Include="Parts\Camera\SamsungRearCamera.cs" />
+    <Compile Include="Parts\Camera\CameraFactory.cs" />
     <Compile Include="Parts\Keyboard\Keyboard.cs" />
     <Compile Include="Parts\Camera\Camera.cs" />
     <Compile Include="Parts\Memory\Memory.cs" />

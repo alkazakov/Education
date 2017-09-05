@@ -25,13 +25,10 @@ namespace Telephone
 
         public IDisplay Create<T>()
         {
-
             if (!IsInitialized)
                 throw  new Exception($"{nameof(DisplayFactory)} is not Initialized!");
-
             if (_supportedTypes.Any(t => t.GetType() == typeof(T)))
                 return (IDisplay)Activator.CreateInstance<T>();
-
             throw new ArgumentException($"Invalid Type: {typeof(T).Name}");
         }
     }
