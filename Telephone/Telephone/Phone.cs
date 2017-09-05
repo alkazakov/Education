@@ -20,12 +20,12 @@ namespace Telephone
 
         public Phone(DisplayFactory displayFactory)
         {
-
+            _display = displayFactory.Create<RetinaDisplay>();
         }
 
         public void TurnOn()
         {
-            throw new NotImplementedException();
+           _display.TurnOn();
         }
         public void TurnOff()
         {
