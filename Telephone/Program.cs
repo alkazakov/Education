@@ -10,7 +10,12 @@ namespace Telephone
     {
         static void Main(string[] args)
         {
-            Phone phone = new Phone(new DisplayFactory());
+            DisplayFactory displayFactory = new DisplayFactory();
+            displayFactory.Initialize();
+            var a =displayFactory.Create<AmoledDisplay>();
+
+            a.Show($"Hello from {a.GetType().Name}");
+            a.TurnOn();
 
             Console.ReadKey();
         }

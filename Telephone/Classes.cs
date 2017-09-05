@@ -21,8 +21,7 @@ namespace Telephone
 
         public Phone(DisplayFactory displayFactory)
         {
-            _display = displayFactory.Create(nameof(Display));
-            _display.TurnOn();
+
         }
 
         public void TurnOn()
@@ -35,21 +34,6 @@ namespace Telephone
         }
     }
 
-    public class Display : IDisplay
-    {
-        public void TurnOn()
-        {
-            Console.WriteLine("Turn On Display");
-        }
-        public void TurnOff()
-        {
-            throw new NotImplementedException();
-        }
-        public void Show(string data)
-        {
-            throw new NotImplementedException();
-        }
-    }
     public class Keyboard : IKeyboard
     {
         public void TurnOn()

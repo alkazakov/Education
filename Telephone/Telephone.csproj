@@ -43,8 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes.cs" />
-    <Compile Include="Fabrics.cs" />
+    <Compile Include="Parts\Display\DisplayFactory.cs" />
+    <Compile Include="Parts\Display\Display.cs" />
+    <Compile Include="Parts\Display\RetinaDisplay.cs" />
+    <Compile Include="Parts\Display\AmoledDisplay.cs" />
     <Compile Include="Interfaces.cs" />
+    <Compile Include="Parts\IPartFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
