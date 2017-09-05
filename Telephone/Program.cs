@@ -10,8 +10,8 @@ namespace Telephone
     {
         static void Main(string[] args)
         {
-           Phone phone = new Phone(new DisplayFactory());
-            phone.TurnOn();
+           Phone phone = new SamsungPhoneBuilder().Construct();
+           phone.TurnOn();
 
             Console.ReadKey();
         }

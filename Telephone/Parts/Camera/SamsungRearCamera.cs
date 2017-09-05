@@ -9,7 +9,7 @@ namespace Telephone
         public override string Model { get; } = nameof(SamsungRearCamera);
         public void TurnOn()
         {
-            Console.WriteLine($"{CameraType}: {nameof(SamsungRearCamera)} is on");
+            Console.WriteLine($"{nameof(SamsungRearCamera)} is on");
         }
 
         public void TurnOff()

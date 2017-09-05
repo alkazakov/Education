@@ -68,16 +68,16 @@
     <Compile Include="Parts\Display\RetinaDisplay.cs" />
     <Compile Include="Parts\Display\AmoledDisplay.cs" />
     <Compile Include="Parts\IPartFactory.cs" />
+    <Compile Include="Telephone\Builder\ITelephoneBuilder.cs" />
     <Compile Include="Telephone\Phone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Parts\WifiModule\WifiModule.cs" />
+    <Compile Include="Telephone\Builder\SamsungPhoneBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Telephone\Builder\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

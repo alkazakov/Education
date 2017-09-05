@@ -9,12 +9,12 @@ namespace Telephone
         public override string Model { get; } = nameof(SamsungFrontCamera);
         public void TurnOn()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{nameof(SamsungFrontCamera)} is on");
         }
 
         public void TurnOff()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{CameraType}: {nameof(SamsungFrontCamera)} is off");
         }
 
         public void TakePhoto()

@@ -9,12 +9,12 @@ namespace Telephone
         public override string Model { get; } = nameof(AppleRearCamera);
         public void TurnOn()
         {
-            Console.WriteLine($"{CameraType}: {nameof(AppleRearCamera)} is on");
+            Console.WriteLine($"{nameof(AppleRearCamera)} is on");
         }
 
         public void TurnOff()
         {
-            Console.WriteLine($"{CameraType}: {nameof(AppleRearCamera)} is off");
+            Console.WriteLine($"{nameof(AppleRearCamera)} is off");
         }
 
         public void TakePhoto()
