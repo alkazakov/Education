@@ -41,8 +41,6 @@ namespace Telephone
             throw new NotImplementedException();
         }
 
-        public Phone Phone { get; }
-
         public Phone Construct()
         {
             return  new Phone(BuildDisplay(),BuildCamera());

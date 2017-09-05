@@ -9,6 +9,6 @@ namespace Telephone
         IMemory BuildMemory();
         ICamera BuildCamera();
         IWifiModule BuildWifiModule();
-        Phone Phone {get;}
+        Phone Construct();
     }
 }
