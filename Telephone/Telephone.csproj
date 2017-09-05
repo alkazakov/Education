@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,18 +43,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes.cs" />
+    <Compile Include="Helpers\Photo.cs" />
+    <Compile Include="Interfaces\ITurnOn.cs" />
+    <Compile Include="Interfaces\ITurnOff.cs" />
+    <Compile Include="Interfaces\ITurnOnOffable.cs" />
+    <Compile Include="Parts\Keyboard\Keyboard.cs" />
+    <Compile Include="Parts\Camera\Camera.cs" />
+    <Compile Include="Parts\Memory\Memory.cs" />
+    <Compile Include="Parts\HardDrive\HardDrive.cs" />
+    <Compile Include="Parts\OperationSystem\OperationSystem.cs" />
+    <Compile Include="Parts\OperationSystem\IOperationSystem.cs" />
+    <Compile Include="Parts\Memory\IMemory.cs" />
+    <Compile Include="Parts\HardDrive\IHardDrive.cs" />
+    <Compile Include="Parts\Camera\ICamera.cs" />
+    <Compile Include="Parts\WifiModule\IWifiModule.cs" />
+    <Compile Include="Parts\Keyboard\IKeyboard.cs" />
+    <Compile Include="Parts\Display\IDisplay.cs" />
     <Compile Include="Parts\Display\DisplayFactory.cs" />
     <Compile Include="Parts\Display\Display.cs" />
     <Compile Include="Parts\Display\RetinaDisplay.cs" />
     <Compile Include="Parts\Display\AmoledDisplay.cs" />
-    <Compile Include="Interfaces.cs" />
     <Compile Include="Parts\IPartFactory.cs" />
+    <Compile Include="Telephone\Phone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Parts\WifiModule\WifiModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

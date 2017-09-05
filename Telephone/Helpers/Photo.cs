@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Telephone2
+namespace Telephone.Helpers
 {
-    class Program
+    class Photo
     {
-        static void Main(string[] args)
-        {
-        }
+        
+    }
+
+    struct Pixel
+    {
+        
     }
 }
