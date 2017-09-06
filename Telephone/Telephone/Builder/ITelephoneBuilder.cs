@@ -4,11 +4,18 @@ namespace Telephone
     {
         IDisplay BuildDisplay();
         IKeyboard BuildKeyboard();
+       
+        IMemory BuildMemory();
+       
+        ITelephone Construct();
+    }
+
+    interface ISmartPhoneBuilder: ITelephoneBuilder
+    {
         IOperationSystem BuildOperatingSystem();
         IHardDrive BuildHardDrive();
-        IMemory BuildMemory();
-        ICamera BuildCamera();
+        ICamera BuildFrontCamera();
+        ICamera BuildRearCamera();
         IWifiModule BuildWifiModule();
-        Phone Construct();
     }
 }

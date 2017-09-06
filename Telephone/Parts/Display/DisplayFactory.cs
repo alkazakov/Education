@@ -14,6 +14,7 @@ namespace Telephone
         {
             _supportedTypes.Add(new RetinaDisplay());
             _supportedTypes.Add(new AmoledDisplay());
+            _supportedTypes.Add(new PrimitiveDisplay());
             IsInitialized = true;
         }
 

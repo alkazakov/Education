@@ -2,11 +2,11 @@ using System;
 
 namespace Telephone
 {
-    public class Keyboard : IKeyboard
+    public class PrimitiveKeyboard : IKeyboard
     {
         public void TurnOn()
         {
-            Console.WriteLine($"{nameof(Keyboard)} is on");
+            Console.WriteLine($"{nameof(PrimitiveKeyboard)} is on");
         }
         public void TurnOff()
         {

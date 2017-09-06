@@ -1,49 +1,64 @@
 using System;
+using System.Collections.Generic;
 
 namespace Telephone
 {
-    class SamsungPhoneBuilder : ITelephoneBuilder
+    class SamsungPhoneBuilder : ISmartPhoneBuilder
     {
         public IDisplay BuildDisplay()
         {
-            DisplayFactory displayFactory = new DisplayFactory();
+            DisplayFactory displayFactory = new DisplayFactory();         
             return displayFactory.Create<AmoledDisplay>();
         }
 
         public IKeyboard BuildKeyboard()
         {
-            throw new NotImplementedException();
+            KeyboardFactory keyboardFactory = new KeyboardFactory();
+            return keyboardFactory.Create<Keyboard>();
         }
 
         public IOperationSystem BuildOperatingSystem()
         {
-            throw new NotImplementedException();
+            OperationSystemFactory operationSystemFactory = new OperationSystemFactory();
+            return operationSystemFactory.Create<OperationSystem>();
         }
 
         public IHardDrive BuildHardDrive()
         {
-            throw new NotImplementedException();
+            HardDriveFactory hardDriveFactory = new HardDriveFactory();
+            return hardDriveFactory.Create<HardDrive>();
         }
 
         public IMemory BuildMemory()
         {
-            throw new NotImplementedException();
+            MemoryFactory memoryFactory = new MemoryFactory();
+            return memoryFactory.Create<Memory>();
         }
 
-        public ICamera BuildCamera()
+        public ICamera BuildFrontCamera()
+        {
+            CameraFactory cameraFactory = new CameraFactory();         
+            return cameraFactory.Create<SamsungFrontCamera>();
+        }
+
+        public ICamera BuildRearCamera()
         {
             CameraFactory cameraFactory = new CameraFactory();
-            return cameraFactory.Create<SamsungFrontCamera>();
+            return cameraFactory.Create<SamsungRearCamera>();
         }
 
         public IWifiModule BuildWifiModule()
         {
-            throw new NotImplementedException();
+          WifiModuleFactory wifiModuleFactory = new WifiModuleFactory();
+            return wifiModuleFactory.Create<WifiModule>();
         }
 
-        public Phone Construct()
+        public ITelephone Construct()
         {
-            return  new Phone(BuildDisplay(),BuildCamera());
+            return new SamsungPhone(BuildDisplay(), BuildKeyboard(), BuildOperatingSystem(), BuildHardDrive(),
+                BuildMemory(), BuildFrontCamera(), BuildRearCamera(), BuildWifiModule());
+            //PrimitivePhone(BuildDisplay(), BuildKeyboard(), BuildMemory());
+
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Telephone
     {
         public void TurnOn()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{nameof(HardDrive)} is on");
         }
         public void TurnOff()
         {

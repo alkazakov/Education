@@ -51,15 +51,21 @@
     <Compile Include="Parts\Camera\SamsungFrontCamera.cs" />
     <Compile Include="Parts\Camera\SamsungRearCamera.cs" />
     <Compile Include="Parts\Camera\CameraFactory.cs" />
+    <Compile Include="Parts\Display\PrimitiveDisplay.cs" />
+    <Compile Include="Parts\HardDrive\HardDriveFactory.cs" />
     <Compile Include="Parts\Keyboard\Keyboard.cs" />
     <Compile Include="Parts\Camera\Camera.cs" />
+    <Compile Include="Parts\Keyboard\KeyboardFactory.cs" />
+    <Compile Include="Parts\Keyboard\PrimitiveKeyboard.cs" />
     <Compile Include="Parts\Memory\Memory.cs" />
     <Compile Include="Parts\HardDrive\HardDrive.cs" />
+    <Compile Include="Parts\Memory\MemoryFactory.cs" />
     <Compile Include="Parts\OperationSystem\OperationSystem.cs" />
     <Compile Include="Parts\OperationSystem\IOperationSystem.cs" />
     <Compile Include="Parts\Memory\IMemory.cs" />
     <Compile Include="Parts\HardDrive\IHardDrive.cs" />
     <Compile Include="Parts\Camera\ICamera.cs" />
+    <Compile Include="Parts\OperationSystem\OperationSystemFactory.cs" />
     <Compile Include="Parts\WifiModule\IWifiModule.cs" />
     <Compile Include="Parts\Keyboard\IKeyboard.cs" />
     <Compile Include="Parts\Display\IDisplay.cs" />
@@ -68,12 +74,19 @@
     <Compile Include="Parts\Display\RetinaDisplay.cs" />
     <Compile Include="Parts\Display\AmoledDisplay.cs" />
     <Compile Include="Parts\IPartFactory.cs" />
+    <Compile Include="Parts\WifiModule\WifiModuleFactory.cs" />
     <Compile Include="Telephone\Builder\ITelephoneBuilder.cs" />
-    <Compile Include="Telephone\Phone.cs" />
+    <Compile Include="Telephone\Builder\PrimitivePhoneBuilder.cs" />
+    <Compile Include="Telephone\ISmartPhone.cs" />
+    <Compile Include="Telephone\ITelephone.cs" />
+    <Compile Include="Telephone\Factory\ITelePhoneFactory.cs" />
+    <Compile Include="Telephone\PrimitivePhone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Parts\WifiModule\WifiModule.cs" />
     <Compile Include="Telephone\Builder\SamsungPhoneBuilder.cs" />
+    <Compile Include="Telephone\SamsungPhone.cs" />
+    <Compile Include="Telephone\Factory\TelePhoneFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
