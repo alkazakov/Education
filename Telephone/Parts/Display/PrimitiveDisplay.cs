@@ -2,20 +2,16 @@ using System;
 
 namespace Telephone
 {
-    public class PrimitiveDisplay : Display, IDisplay
+    public class PrimitiveDisplay : Display
     {
         public override string DisplayInfo { get; } = nameof(PrimitiveDisplay);
-        public void TurnOn()
+        public override void TurnOn()
         {
             Console.WriteLine($"{nameof(PrimitiveDisplay)} is turned on");
         }
-        public void TurnOff()
+        public override void TurnOff()
         {
             Console.WriteLine($"{nameof(PrimitiveDisplay)} is turned off");
-        }
-        public void Show(string data)
-        {
-            Console.WriteLine(data);
         }
     }
 }

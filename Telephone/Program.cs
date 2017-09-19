@@ -18,6 +18,8 @@ namespace Telephone
             var samsungJ5 = samsungBuilder.Construct();
             samsungJ5.TurnOn();
 
+            // var samsumgj5 = shop.get<SamsungPhone> -facade // mediator --> memento //charger add ->  add transformer
+
             Console.WriteLine("------Create Primitive Phone------");
             TelePhoneFactory primitivePhoneFactory = new TelePhoneFactory();
             var primitivePhoneBuilder = primitivePhoneFactory.Create<PrimitivePhoneBuilder>();

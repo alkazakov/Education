@@ -1,7 +1,10 @@
+using System.Collections.Generic;
+
 namespace Telephone
 {
     class PrimitivePhoneBuilder : ITelephoneBuilder
     {
+        private IList<ITurnOnOffable> _hardwareList = new List<ITurnOnOffable>();
         public IDisplay BuildDisplay()
         {
             DisplayFactory displayFactory = new DisplayFactory();
@@ -20,6 +23,7 @@ namespace Telephone
         }
         public ITelephone Construct()
         {
+           
             return new PrimitivePhone(BuildDisplay(), BuildKeyboard(),BuildMemory());
         }
     }

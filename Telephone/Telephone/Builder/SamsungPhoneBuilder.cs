@@ -57,7 +57,6 @@ namespace Telephone
         {
             return new SamsungPhone(BuildDisplay(), BuildKeyboard(), BuildOperatingSystem(), BuildHardDrive(),
                 BuildMemory(), BuildFrontCamera(), BuildRearCamera(), BuildWifiModule());
-            //PrimitivePhone(BuildDisplay(), BuildKeyboard(), BuildMemory());
 
         }
     }
