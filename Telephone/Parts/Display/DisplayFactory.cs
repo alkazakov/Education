@@ -3,33 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using Telephone.Parts;
 
 namespace Telephone
 {
-    class DisplayFactory: IPartFactory<IDisplay>
+    class DisplayFactory: PartFactory, IPartFactory<IDisplay>
     {
-        readonly IList<IDisplay> _supportedTypes = new List<IDisplay>();
-
-        /// <summary>
-        /// supported types-> find in assembly by pattern xxxDisplay
-        /// </summary>
-        public void Initialize()
-        {
-            _supportedTypes.Add(new RetinaDisplay());
-            _supportedTypes.Add(new AmoledDisplay());
-            _supportedTypes.Add(new PrimitiveDisplay());
-
-        }
+        readonly IList<Type> _supportedTypes = new List<Type>();
 
         public DisplayFactory()
         {
-           Initialize();
+            _supportedTypes = GetSupportedTypesList<IDisplay>();
         }
-       
+        
         public IDisplay Create<T>()
         {
-           
-            if (_supportedTypes.Any(t => t.GetType() == typeof(T)))
+            if (_supportedTypes.Any(t => t.Name == typeof(T).Name))
                 return (IDisplay)Activator.CreateInstance<T>();
             throw new ArgumentException($"Invalid Type: {typeof(T).Name}");
         }

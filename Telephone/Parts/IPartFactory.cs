@@ -7,7 +7,5 @@
     interface IPartFactory<out TResult>
     {
         TResult Create<T>();
-        void Initialize();
-        bool IsInitialized { get; }
     }
 }

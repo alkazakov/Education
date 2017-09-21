@@ -66,6 +66,7 @@
     <Compile Include="Parts\HardDrive\IHardDrive.cs" />
     <Compile Include="Parts\Camera\ICamera.cs" />
     <Compile Include="Parts\OperationSystem\OperationSystemFactory.cs" />
+    <Compile Include="Parts\PartFactory.cs" />
     <Compile Include="Parts\WifiModule\IWifiModule.cs" />
     <Compile Include="Parts\Keyboard\IKeyboard.cs" />
     <Compile Include="Parts\Display\IDisplay.cs" />
