@@ -9,6 +9,16 @@ namespace Telephone.Parts
 {
     abstract class PartFactory
     {
-        protected List<Type> GetSupportedTypesList<T>() => Assembly.GetExecutingAssembly().GetTypes().Where(t => t.IsClass && t.GetInterfaces().Contains(typeof(T))).ToList();
+        /// <summary>
+        /// Gets the supported types for concrete Factory.
+        /// Check whether´instance implement supported interface.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        protected List<Type> GetSupportedTypesList<T>() => Assembly.GetExecutingAssembly().
+                                                                    GetTypes().
+                                                                    Where(t => t.IsClass && 
+                                                                               t.GetInterfaces().Contains(typeof(T))).
+                                                                    ToList();
     }
 }
