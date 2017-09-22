@@ -1,18 +1,19 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Telephone.Parts;
 
 namespace Telephone
 {
-    class OperationSystemFactory : PartFactory,IPartFactory<IOperationSystem>
+    class BatteryFactory : PartFactory, IPartFactory<IBattery>
     {
         private IList<Type> _supportedTypes = new List<Type>();
-        public IOperationSystem Create<T>()
+
+        public IBattery Create<T>()
         {
-            _supportedTypes = GetSupportedTypesList<IOperationSystem>();
+            _supportedTypes = GetSupportedTypesList<IBattery>();
             if (_supportedTypes.Any(t => t.Name == typeof(T).Name))
-                return (IOperationSystem)Activator.CreateInstance<T>();
+                return (IBattery) Activator.CreateInstance<T>();
             throw new ArgumentException($"Invalid Type: {typeof(T).Name}");
         }
     }

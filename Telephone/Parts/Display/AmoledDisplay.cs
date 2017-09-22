@@ -2,18 +2,20 @@ using System;
 
 namespace Telephone
 {
-    public class AmoledDisplay : Display, IDisplay
+    /// <summary>
+    /// This Display can only for Samsung Phone implemented
+    /// </summary>
+    public class AmoledDisplay : Display
     {
-        public override string DisplayInfo { get; } = nameof(AmoledDisplay);
         public override  void TurnOn()
         {
-            Console.WriteLine($"{nameof(AmoledDisplay)} is turned on");
+            Console.WriteLine($"{DisplayInfo} is turned on");
         }
         public override void TurnOff()
         {
-            Console.WriteLine($"{nameof(AmoledDisplay)} is turned off");
+            Console.WriteLine($"{DisplayInfo} is turned off");
         }
-        public  new void Show(string data)
+        public override void Show(string data)
         {
             Console.WriteLine(data);
         }

@@ -13,7 +13,11 @@ namespace Telephone
         /// The supported types
         /// </summary>
         private IList<Type> _supportedTypes = new List<Type>();
-        
+        /// <summary>
+        /// Create Instance of concrete Display
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public IDisplay Create<T>()
         {
             _supportedTypes = GetSupportedTypesList<IDisplay>();

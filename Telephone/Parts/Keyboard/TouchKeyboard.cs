@@ -2,7 +2,7 @@ using System;
 
 namespace Telephone
 {
-    public class PrimitiveKeyboard : Keyboard
+    public class TouchKeyboard : Keyboard
     {
         public override void TurnOn()
         {

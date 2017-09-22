@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace Telephone.Parts
 {
+    /// <summary>
+    /// This is an abstract Factory for all Phone Parts
+    /// </summary>
     abstract class PartFactory
     {
         /// <summary>
-        /// Gets the supported types for concrete Factory.
-        /// Check whether´instance implement supported interface.
+        /// Gets supported types for concrete Factory.
+        /// Check whether instance implement supported interface.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>

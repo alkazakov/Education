@@ -46,10 +46,13 @@
     <Compile Include="Interfaces\ITurnOn.cs" />
     <Compile Include="Interfaces\ITurnOff.cs" />
     <Compile Include="Interfaces\ITurnOnOffable.cs" />
-    <Compile Include="Parts\Camera\AppleFrontCamera.cs" />
-    <Compile Include="Parts\Camera\AppleRearCamera.cs" />
-    <Compile Include="Parts\Camera\SamsungFrontCamera.cs" />
-    <Compile Include="Parts\Camera\SamsungRearCamera.cs" />
+    <Compile Include="Shop\IPhoneShop.cs" />
+    <Compile Include="Parts\Battery\Battery.cs" />
+    <Compile Include="Parts\Battery\BatteryFactory.cs" />
+    <Compile Include="Parts\Battery\BatteryStatus.cs" />
+    <Compile Include="Parts\Battery\IBattery.cs" />
+    <Compile Include="Parts\Camera\AppleCamera.cs" />
+    <Compile Include="Parts\Camera\SamsungCamera.cs" />
     <Compile Include="Parts\Camera\CameraFactory.cs" />
     <Compile Include="Parts\Display\PrimitiveDisplay.cs" />
     <Compile Include="Parts\HardDrive\HardDriveFactory.cs" />
@@ -57,6 +60,7 @@
     <Compile Include="Parts\Camera\Camera.cs" />
     <Compile Include="Parts\Keyboard\KeyboardFactory.cs" />
     <Compile Include="Parts\Keyboard\PrimitiveKeyboard.cs" />
+    <Compile Include="Parts\Keyboard\TouchKeyboard.cs" />
     <Compile Include="Parts\Memory\Memory.cs" />
     <Compile Include="Parts\HardDrive\HardDrive.cs" />
     <Compile Include="Parts\Memory\MemoryFactory.cs" />
@@ -76,18 +80,22 @@
     <Compile Include="Parts\Display\AmoledDisplay.cs" />
     <Compile Include="Parts\IPartFactory.cs" />
     <Compile Include="Parts\WifiModule\WifiModuleFactory.cs" />
-    <Compile Include="Telephone\Builder\ITelephoneBuilder.cs" />
-    <Compile Include="Telephone\Builder\PrimitivePhoneBuilder.cs" />
+    <Compile Include="Shop\PhoneShop.cs" />
+    <Compile Include="Telephone\NewFolder1\Builder\IManufacturer.cs" />
+    <Compile Include="Telephone\NewFolder1\Builder\IPhoneBuilder.cs" />
+    <Compile Include="Telephone\NewFolder1\Builder\ISmartPhoneBuilder.cs" />
+    <Compile Include="Telephone\NewFolder1\Builder\PrimitiveManufacturer.cs" />
+    <Compile Include="Telephone\NewFolder1\Builder\PrimitivePhoneConcreteBuilder.cs" />
+    <Compile Include="Telephone\NewFolder1\Builder\SamsungManufacturer.cs" />
     <Compile Include="Telephone\ISmartPhone.cs" />
     <Compile Include="Telephone\ITelephone.cs" />
-    <Compile Include="Telephone\Factory\ITelePhoneFactory.cs" />
-    <Compile Include="Telephone\PrimitivePhone.cs" />
+    <Compile Include="Telephone\Phone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Parts\WifiModule\WifiModule.cs" />
-    <Compile Include="Telephone\Builder\SamsungPhoneBuilder.cs" />
+    <Compile Include="Telephone\NewFolder1\Builder\SamsungPhoneConcreteBuilder.cs" />
     <Compile Include="Telephone\SamsungPhone.cs" />
-    <Compile Include="Telephone\Factory\TelePhoneFactory.cs" />
+    <Compile Include="Telephone\NewFolder1\Factory\PhoneFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

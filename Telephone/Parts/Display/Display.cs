@@ -2,18 +2,14 @@ using System;
 
 namespace Telephone
 {
+    /// <summary>
+    /// This is a base class for all Displays.
+    /// </summary>
     public abstract class Display : IDisplay
-    {
-        public abstract string DisplayInfo { get; }
+    {  
         public abstract void TurnOn();
-
-
         public abstract void TurnOff();
-
-
-        public void Show(string data)
-        {
-            Console.WriteLine(data);
-        }
+        public virtual string DisplayInfo { get; set; } = "Abstract Display";
+        public abstract void Show(string data);
     }
 }

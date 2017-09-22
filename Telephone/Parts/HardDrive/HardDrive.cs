@@ -10,7 +10,7 @@ namespace Telephone
         }
         public void TurnOff()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{nameof(HardDrive)} is off");
         }
         public int SaveData(string data)
         {

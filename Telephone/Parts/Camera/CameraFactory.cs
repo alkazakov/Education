@@ -1,37 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Telephone.Parts;
 
 namespace Telephone
 {
-    class CameraFactory : IPartFactory<ICamera>
+    class CameraFactory : PartFactory, IPartFactory<ICamera>
     {
-        readonly IList<ICamera> _supportedTypes = new List<ICamera>();
-
-        public void Initialize()
-        {
-            _supportedTypes.Add(new AppleFrontCamera());
-            _supportedTypes.Add(new AppleRearCamera());
-            _supportedTypes.Add(new SamsungFrontCamera());
-            _supportedTypes.Add(new SamsungRearCamera());
-            IsInitialized = true;
-        }
-
-        public CameraFactory()
-        {
-            Initialize();
-        }
-        public bool IsInitialized { get; private set; } = false;
-
+        private IList<Type> _supportedTypes = new List<Type>();
         public ICamera Create<T>()
         {
-
-            if (!IsInitialized)
-                throw new Exception($"{nameof(CameraFactory)} is not Initialized!");
-
-            if (_supportedTypes.Any(t => t.GetType() == typeof(T)))
+            _supportedTypes = GetSupportedTypesList<ICamera>();
+            if (_supportedTypes.Any(t => t.Name == typeof(T).Name))
                 return (ICamera)Activator.CreateInstance<T>();
-
             throw new ArgumentException($"Invalid Type: {typeof(T).Name}");
         }
     }

@@ -4,28 +4,15 @@ namespace Telephone
 {
     class SamsungPhone: ISmartPhone
     {
-        public IDisplay Display { get; }
-        public IKeyboard Keyboard { get; }
-        public IHardDrive HardDrive { get; }
-        public IMemory Memory { get; }
-        public ICamera FrontCamera { get; }
-        public ICamera RearCamera { get; }
-        public IOperationSystem OperationSystem { get; }
-        public IWifiModule WifiModule { get; }
-
-        public SamsungPhone(IDisplay display, IKeyboard keyboard, IOperationSystem operationSystem, IHardDrive hardDrive, IMemory memory, ICamera frontCamera, ICamera rearCamera, IWifiModule wifiModule) 
-           
-        {
-            Display = display;
-            Keyboard = keyboard;
-            OperationSystem = operationSystem;
-            HardDrive = hardDrive;
-            Memory = memory;
-            FrontCamera = frontCamera;
-            RearCamera = rearCamera;
-            WifiModule = wifiModule;
-        } 
-
+        public IDisplay Display { get; set; }
+        public IKeyboard Keyboard { get; set; }
+        public IHardDrive HardDrive { get; set; }
+        public IMemory Memory { get; set; }
+        public ICamera FrontCamera { get; set; }
+        public ICamera RearCamera { get; set; }
+        public IOperationSystem OperationSystem { get; set; }
+        public IWifiModule WifiModule { get; set; }
+   
         public void TurnOn()
         {
             Display.TurnOn();

@@ -1,30 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Telephone.Parts;
 
 namespace Telephone
 {
-    class WifiModuleFactory : IPartFactory<IWifiModule>
+    class WifiModuleFactory : PartFactory,IPartFactory<IWifiModule>
     {
-        readonly IList<IWifiModule> _supportedTypes = new List<IWifiModule>();
-
-        public void Initialize()
-        {
-            _supportedTypes.Add(new WifiModule());
-            IsInitialized = true;
-        }
-
-        public WifiModuleFactory()
-        {
-            Initialize();
-        }
-        public bool IsInitialized { get; private set; } = false;
-
+        private IList<Type> _supportedTypes = new List<Type>();
         public IWifiModule Create<T>()
         {
-            if (!IsInitialized)
-                throw new Exception($"{nameof(WifiModuleFactory)} is not Initialized!");
-            if (_supportedTypes.Any(t => t.GetType() == typeof(T)))
+            _supportedTypes = GetSupportedTypesList<IWifiModule>();
+            if (_supportedTypes.Any(t => t.Name == typeof(T).Name))
                 return (IWifiModule)Activator.CreateInstance<T>();
             throw new ArgumentException($"Invalid Type: {typeof(T).Name}");
         }

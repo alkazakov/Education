@@ -7,24 +7,14 @@ using System.Threading.Tasks;
 
 namespace Telephone
 {
-    class Program
+    partial class Program
     {
-       
         static void Main(string[] args)
         {
-            Console.WriteLine("------Create Samsung J5------");
-            TelePhoneFactory samsungFactory = new TelePhoneFactory();
-            var samsungBuilder = samsungFactory.Create<SamsungPhoneBuilder>();
-            var samsungJ5 = samsungBuilder.Construct();
-            samsungJ5.TurnOn();
+            PhoneShop phoneShop = new PhoneShop();
+            var phone = phoneShop.GetPhone<Phone>();
 
-            // var samsumgj5 = shop.get<SamsungPhone> -facade // mediator --> memento //charger add ->  add transformer
-
-            Console.WriteLine("------Create Primitive Phone------");
-            TelePhoneFactory primitivePhoneFactory = new TelePhoneFactory();
-            var primitivePhoneBuilder = primitivePhoneFactory.Create<PrimitivePhoneBuilder>();
-            var primitivePhone = primitivePhoneBuilder.Construct();
-            primitivePhone.TurnOn();
+            phone.TurnOn();
 
             Console.ReadKey();
         }

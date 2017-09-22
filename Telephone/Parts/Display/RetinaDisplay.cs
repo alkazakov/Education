@@ -2,18 +2,20 @@ using System;
 
 namespace Telephone
 {
-    public class RetinaDisplay : Display, IDisplay
+    /// <summary>
+    /// This Display can only for Apple Phone implemented
+    /// </summary>
+    public class RetinaDisplay : Display
     {
-        public override string DisplayInfo { get; } = nameof(RetinaDisplay);
         public override void TurnOn()
         {
-            Console.WriteLine($"{nameof(RetinaDisplay)} is turned on");
+            Console.WriteLine($"{DisplayInfo} is turned on");
         }
         public override  void TurnOff()
         {
-            Console.WriteLine($"{nameof(RetinaDisplay)} is turned off");
+            Console.WriteLine($"{DisplayInfo} is turned off");
         }
-        public new  void Show(string data)
+        public override void Show(string data)
         {
             Console.WriteLine(data);
         }

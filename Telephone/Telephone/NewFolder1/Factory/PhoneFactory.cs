@@ -5,14 +5,14 @@ using Telephone.Parts;
 
 namespace Telephone
 {
-    class OperationSystemFactory : PartFactory,IPartFactory<IOperationSystem>
+    class PhoneFactory : PartFactory, IPartFactory<IManufacturer>
     {
         private IList<Type> _supportedTypes = new List<Type>();
-        public IOperationSystem Create<T>()
+        public IManufacturer Create<T>()
         {
-            _supportedTypes = GetSupportedTypesList<IOperationSystem>();
+            _supportedTypes = GetSupportedTypesList<IManufacturer>();
             if (_supportedTypes.Any(t => t.Name == typeof(T).Name))
-                return (IOperationSystem)Activator.CreateInstance<T>();
+                return (IManufacturer)Activator.CreateInstance<T>();
             throw new ArgumentException($"Invalid Type: {typeof(T).Name}");
         }
     }

@@ -10,8 +10,11 @@ namespace Telephone
         }
         public void TurnOff()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{nameof(WifiModule)} is off");
         }
+
+        public string Ip { get; set; }
+
         public void Connect()
         {
             throw new NotImplementedException();

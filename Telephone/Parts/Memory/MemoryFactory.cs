@@ -1,30 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Telephone.Parts;
 
 namespace Telephone
 {
-    class MemoryFactory : IPartFactory<IMemory>
+    class MemoryFactory : PartFactory,IPartFactory<IMemory>
     {
-        readonly IList<IMemory> _supportedTypes = new List<IMemory>();
-
-        public void Initialize()
-        {
-            _supportedTypes.Add(new Memory());
-            IsInitialized = true;
-        }
-
-        public MemoryFactory()
-        {
-            Initialize();
-        }
-        public bool IsInitialized { get; private set; } = false;
-
+        private IList<Type> _supportedTypes = new List<Type>();
         public IMemory Create<T>()
         {
-            if (!IsInitialized)
-                throw new Exception($"{nameof(MemoryFactory)} is not Initialized!");
-            if (_supportedTypes.Any(t => t.GetType() == typeof(T)))
+            _supportedTypes = GetSupportedTypesList<IMemory>();
+            if (_supportedTypes.Any(t => t.Name == typeof(T).Name))
                 return (IMemory)Activator.CreateInstance<T>();
             throw new ArgumentException($"Invalid Type: {typeof(T).Name}");
         }

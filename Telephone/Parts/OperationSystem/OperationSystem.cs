@@ -10,7 +10,7 @@ namespace Telephone
         }
         public void TurnOff()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{nameof(OperationSystem)} is off");
         }
         public void Load()
         {
