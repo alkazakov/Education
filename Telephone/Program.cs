@@ -9,12 +9,22 @@ namespace Telephone
 {
     partial class Program
     {
+       
+
         static void Main(string[] args)
         {
             PhoneShop phoneShop = new PhoneShop();
             var phone = phoneShop.GetPhone<Phone>();
 
-            phone.TurnOn();
+            BatteryFactory battery = new BatteryFactory();
+            var b = battery.Create<Battery>();
+
+            var  battery2 = (Battery) b;
+            Console.WriteLine(battery2.BatteryConfig.DeviceId);
+            Console.WriteLine(battery2.BatteryConfig.Capacity);
+
+
+
 
             Console.ReadKey();
         }

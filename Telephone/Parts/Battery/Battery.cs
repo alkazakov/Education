@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 
 namespace Telephone
 {
@@ -13,7 +14,14 @@ namespace Telephone
             Console.WriteLine($"{nameof(Battery)} is off");
         }
 
-        public int Capacity { get; } = 1250;
+        public int Capacity => _capacity;
+        readonly int _capacity;
+
+        public BatteryConfig BatteryConfig => _batteryConfig;
+        private readonly BatteryConfig _batteryConfig = new BatteryConfig();
+
+
+
         public int ChargeLevel { get; set; }
         public BatteryStatus GetStatus()
         {

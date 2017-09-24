@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\UnivConfig.cs" />
     <Compile Include="Interfaces\ITurnOn.cs" />
     <Compile Include="Interfaces\ITurnOff.cs" />
     <Compile Include="Interfaces\ITurnOnOffable.cs" />
